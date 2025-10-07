@@ -5,11 +5,16 @@ from django.http import HttpResponse
 def index(request):
     """Главная страница"""
     context = {
-        'title': 'Home',
-        'content': 'Главная страница магазина - HOME'
+        'title': 'Home - Главная',
+        'content': 'Магазин мебели HOME'
     }
     return render(request, 'main/index.html', context)
 
 def about(request):
     """Страница 'О нас' """
-    return HttpResponse("About")
+    context = {
+        'title': 'Home - О нас',
+        'content': 'О нас',
+        'text_on_page': 'lorem ipsum'
+    }
+    return render(request, 'main/about.html', context)
